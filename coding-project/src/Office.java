@@ -11,4 +11,8 @@ public class Office {
         OfficeNumber = UniqueIdentifierGenerator.generateUniqueIdentifier();
         this.Employees = new ArrayList<>();
     }
+
+    void addEmployee(String employeeName){
+        Employees.add(employeeName);
+    }
 }
