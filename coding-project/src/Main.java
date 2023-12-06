@@ -6,5 +6,7 @@ public class Main {
 
         Office p2 = new Office();
         System.out.println(p2.OfficeNumber);
+
+        System.out.println(p1.Employees);
     }
 }
