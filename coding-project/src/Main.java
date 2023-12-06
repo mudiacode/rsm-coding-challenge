@@ -17,5 +17,7 @@ public class Main {
         p2.addEmployee("Christ");
 
         p1.getEmployees();
+
+        Company.openOffice("RSM");
     }
 }
