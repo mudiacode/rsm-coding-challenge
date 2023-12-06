@@ -10,6 +10,7 @@ public class Main {
         p1.addEmployee("Steve");
         p1.addEmployee("Bob");
         p1.addEmployee("Jesicca");
+        p1.removeEmployee("Jesicca");
 
         p2.addEmployee("Kevin");
         p2.addEmployee("John");

@@ -15,4 +15,8 @@ public class Office {
     void addEmployee(String employeeName){
         Employees.add(employeeName);
     }
+
+    void removeEmployee(String employeeName){
+        Employees.remove(employeeName);
+    }
 }
