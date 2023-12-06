@@ -15,7 +15,7 @@ public class Main {
         p2.addEmployee("Kevin");
         p2.addEmployee("John");
         p2.addEmployee("Christ");
-        System.out.println(p1.Employees);
-        System.out.println(p2.Employees);
+
+        p1.getEmployees();
     }
 }

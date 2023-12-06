@@ -19,4 +19,8 @@ public class Office {
     void removeEmployee(String employeeName){
         Employees.remove(employeeName);
     }
+
+    void getEmployees(){
+        System.out.println(Employees);
+    }
 }
