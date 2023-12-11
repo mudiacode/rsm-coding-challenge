@@ -4,12 +4,12 @@ import java.util.List;
 public class Office {
     private final String officeNumber;
     private String officeName;
-    private static List<String> employees;
+    private List<String> employees;
 
     public Office(String officeName) {
-        this.officeNumber = UniqueIdentifierGenerator.generateUniqueIdentifier();
+        this.officeNumber = UniqueIdentifier.generateUniqueIdentifier();
         this.officeName = officeName;
-        employees = new ArrayList<>();
+        this.employees = new ArrayList<>();
     }
 
     public String getOfficeNumber() {
@@ -24,15 +24,15 @@ public class Office {
         this.officeName = officeName;
     }
 
-    public static void addEmployee(String employeeName) {
+    public void addEmployee(String employeeName) {
         employees.add(employeeName);
     }
 
-    public static void removeEmployee(String employeeName) {
+    public void removeEmployee(String employeeName) {
         employees.remove(employeeName);
     }
 
     public void getEmployees() {
-        System.out.println(employees);
+        System.out.println("Employees in office " + officeName + ": " + employees);
     }
 }

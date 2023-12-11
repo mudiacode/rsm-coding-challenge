@@ -1,7 +1,7 @@
 import java.util.Random;
 
-public class UniqueIdentifierGenerator {
-    private static final Random random = new Random(123);
+public class UniqueIdentifier{
+    private static final Random random = new Random(1);
     public static void main(String[] args) {
         String uniqueIdentifier = generateUniqueIdentifier();
         System.out.println("Unique Identifier: " + uniqueIdentifier);

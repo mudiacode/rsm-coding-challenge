@@ -5,15 +5,18 @@ public class Main {
 
         Company.getOffice("604782");
 
-        Company.addEmployee("Mike", "604782");
-        Company.addEmployee("Steve", "604782");
-        Company.addEmployee("Jessica", "604782");
+        Company.addEmployee("Mike", "948985");
+        Company.addEmployee("Steve", "948985");
+        Company.addEmployee("Jessica", "948985");
 
-        Company.addEmployee("Jake", "177450");
-        Company.addEmployee("Tom", "177450");
-        Company.addEmployee("Bob", "177450");
+        Company.addEmployee("Jake", "764588");
+        Company.addEmployee("Tom", "764588");
+        Company.addEmployee("Bob", "764588");
 
-        Company.transferEmployee("Jake", "177450", "604782");
+        Company.transferEmployee("Jake", "764588", "948985");
+
+        Company.getEmployees("948985");
+
 
     }
 }
