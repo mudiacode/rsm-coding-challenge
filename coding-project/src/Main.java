@@ -3,5 +3,6 @@ public class Main {
         Company.openOffice("RSM");
         Company.openOffice("KFC");
 
+        Company.getOffice();
     }
 }

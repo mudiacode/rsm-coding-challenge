@@ -2,20 +2,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Office {
-    public static String officeNumber;
-    private static String officeName;
+    private static final UniqueIdentifierGenerator idGenerator = new UniqueIdentifierGenerator();
+    private String officeNumber;
+    private String officeName;
     private List<String> employees;
 
-    Office() {
-        this.officeNumber = UniqueIdentifierGenerator.generateUniqueIdentifier();
+    public Office(String officeName) {
+        this.officeNumber = idGenerator.generateUniqueIdentifier();
+        this.officeName = officeName;
         this.employees = new ArrayList<>();
     }
 
-    public static String getOfficeNumber() {
+    public String getOfficeNumber() {
         return officeNumber;
     }
 
-    public static String getOfficeName() {
+    public String getOfficeName() {
         return officeName;
     }
 
@@ -33,9 +35,5 @@ public class Office {
 
     public void getEmployees() {
         System.out.println(employees);
-    }
-
-    public void setOfficeNumber(String officeNumber) {
-        this.officeNumber = officeNumber;
     }
 }
