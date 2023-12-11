@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Office {
     private final Integer officeNumber;
-    private String officeName;
+    private final String officeName;
     private final List<String> employees;
 
     public Office(String officeName) {
