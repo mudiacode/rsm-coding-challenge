@@ -19,4 +19,15 @@ public class Company {
         }
         System.out.println("Invalid Office Number! Please Enter Correct Office Number...");
     }
+
+    public static void addEmployee(String employeeName, String officeNumber){
+        for (Office office: offices) {
+            if (officeNumber.equals(office.getOfficeNumber())){
+                Office.addEmployee(employeeName);
+                System.out.println("Added employee " + employeeName + " to office " + office.getOfficeName());
+                return;
+            }
+        }
+        System.out.println("Invalid Office Number! Please Enter Correct Office Number To Add Employee");
+    }
 }

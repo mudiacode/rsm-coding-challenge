@@ -4,5 +4,9 @@ public class Main {
         Company.openOffice("KFC");
 
         Company.getOffice("604782");
+
+        Company.addEmployee("Mike", "604782");
+
+
     }
 }

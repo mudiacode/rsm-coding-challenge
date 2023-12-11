@@ -5,7 +5,7 @@ public class Office {
     private static final UniqueIdentifierGenerator idGenerator = new UniqueIdentifierGenerator();
     private String officeNumber;
     private String officeName;
-    private List<String> employees;
+    private static List<String> employees;
 
     public Office(String officeName) {
         this.officeNumber = idGenerator.generateUniqueIdentifier();
@@ -25,7 +25,7 @@ public class Office {
         this.officeName = officeName;
     }
 
-    public void addEmployee(String employeeName) {
+    public static void addEmployee(String employeeName) {
         employees.add(employeeName);
     }
 
