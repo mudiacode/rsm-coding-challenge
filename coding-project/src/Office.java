@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Office {
-    private final String officeNumber;
+    private final Integer officeNumber;
     private String officeName;
-    private List<String> employees;
+    private final List<String> employees;
 
     public Office(String officeName) {
         this.officeNumber = UniqueIdentifier.generateUniqueIdentifier();
@@ -12,16 +12,12 @@ public class Office {
         this.employees = new ArrayList<>();
     }
 
-    public String getOfficeNumber() {
+    public Integer getOfficeNumber() {
         return officeNumber;
     }
 
     public String getOfficeName() {
         return officeName;
-    }
-
-    public void setOfficeName(String officeName) {
-        this.officeName = officeName;
     }
 
     public void addEmployee(String employeeName) {
