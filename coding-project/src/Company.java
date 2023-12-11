@@ -10,9 +10,13 @@ public class Company {
         System.out.println("Opened Office: " + newOffice.getOfficeName() + ", " + newOffice.getOfficeNumber());
     }
 
-    public static void getOffice() {
+    public static void getOffice(String officeNumber) {
         for (Office office : offices) {
-            System.out.println("office Name: " + office.getOfficeName());
+            if (officeNumber.equals(office.getOfficeNumber())){
+                System.out.println("found: " + office.getOfficeName() + " (" + office.getOfficeNumber() + ")");
+                return;
+            }
         }
+        System.out.println("Invalid Office Number! Please Enter Correct Office Number...");
     }
 }
