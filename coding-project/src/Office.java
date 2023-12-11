@@ -29,7 +29,7 @@ public class Office {
         employees.add(employeeName);
     }
 
-    public void removeEmployee(String employeeName) {
+    public static void removeEmployee(String employeeName) {
         employees.remove(employeeName);
     }
 

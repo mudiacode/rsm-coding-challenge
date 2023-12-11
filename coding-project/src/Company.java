@@ -17,7 +17,7 @@ public class Company {
                 return;
             }
         }
-        System.out.println("Invalid Office Number! Please Enter Correct Office Number...");
+        System.out.println("Office number not found");
     }
 
     public static void addEmployee(String employeeName, String officeNumber){
@@ -28,6 +28,32 @@ public class Company {
                 return;
             }
         }
-        System.out.println("Invalid Office Number! Please Enter Correct Office Number To Add Employee");
+        System.out.println("Office number not found");
     }
-}
+
+    public static void transferEmployee(String employeeName, String oldOfficeNumber, String newOfficeNumber) {
+        boolean oldOfficeFound = false;
+        boolean newOfficeFound = false;
+
+        for (Office office : offices) {
+            if (oldOfficeNumber.equals(office.getOfficeNumber())) {
+                office.removeEmployee(employeeName);
+                oldOfficeFound = true;
+            }
+            if (newOfficeNumber.equals(office.getOfficeNumber())) {
+                office.addEmployee(employeeName);
+                newOfficeFound = true;
+                System.out.println("Moved " + employeeName + " to " + office.getOfficeName());
+            }
+        }
+
+        if (!oldOfficeFound) {
+            System.out.println("Old office with number " + oldOfficeNumber + " not found.");
+        }
+
+        if (!newOfficeFound) {
+            System.out.println("New office with number " + newOfficeNumber + " not found.");
+        }
+    }
+    }
+
