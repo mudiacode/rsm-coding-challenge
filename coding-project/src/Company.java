@@ -10,7 +10,7 @@ public class Company {
         System.out.println("Opened Office: " + newOffice.getOfficeName() + ", " + newOffice.getOfficeNumber());
     }
 
-    public static void getOffice(String officeNumber) {
+    public static void getOffice(Integer officeNumber) {
         for (Office office : offices) {
             if (officeNumber.equals(office.getOfficeNumber())){
                 System.out.println("found: " + office.getOfficeName() + " (" + office.getOfficeNumber() + ")");
@@ -20,7 +20,7 @@ public class Company {
         System.out.println("Office number not found");
     }
 
-    public static void addEmployee(String employeeName, String officeNumber){
+    public static void addEmployee(String employeeName, Integer officeNumber){
         for (Office office: offices) {
             if (officeNumber.equals(office.getOfficeNumber())){
                 office.addEmployee(employeeName);
@@ -31,7 +31,7 @@ public class Company {
         System.out.println("Office number not found");
     }
 
-    public static void transferEmployee(String employeeName, String oldOfficeNumber, String newOfficeNumber) {
+    public static void transferEmployee(String employeeName, Integer oldOfficeNumber, Integer newOfficeNumber) {
         boolean oldOffice= false;
         boolean newOffice= false;
 
@@ -55,7 +55,7 @@ public class Company {
             System.out.println(newOfficeNumber + " not found.");
         }
     }
-    public static void getEmployees(String officeNumber) {
+    public static void getEmployees(Integer officeNumber) {
         for (Office office : offices) {
             if (officeNumber.equals(office.getOfficeNumber())) {
                 office.getEmployees();
