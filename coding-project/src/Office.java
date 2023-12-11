@@ -2,15 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Office {
-    private static final UniqueIdentifierGenerator idGenerator = new UniqueIdentifierGenerator();
-    private String officeNumber;
+    private final String officeNumber;
     private String officeName;
     private static List<String> employees;
 
     public Office(String officeName) {
-        this.officeNumber = idGenerator.generateUniqueIdentifier();
+        this.officeNumber = UniqueIdentifierGenerator.generateUniqueIdentifier();
         this.officeName = officeName;
-        this.employees = new ArrayList<>();
+        employees = new ArrayList<>();
     }
 
     public String getOfficeNumber() {

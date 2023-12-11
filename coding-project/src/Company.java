@@ -37,11 +37,11 @@ public class Company {
 
         for (Office office : offices) {
             if (oldOfficeNumber.equals(office.getOfficeNumber())) {
-                office.removeEmployee(employeeName);
+                Office.removeEmployee(employeeName);
                 oldOfficeFound = true;
             }
             if (newOfficeNumber.equals(office.getOfficeNumber())) {
-                office.addEmployee(employeeName);
+                Office.addEmployee(employeeName);
                 newOfficeFound = true;
                 System.out.println("Moved " + employeeName + " to " + office.getOfficeName());
             }
