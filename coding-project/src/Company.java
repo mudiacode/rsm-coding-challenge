@@ -20,23 +20,41 @@ public class Company {
         System.out.println("Office number not found");
     }
 
-    public static void addEmployee(String employeeName, Integer officeNumber) {
+    public static boolean addEmployee(String employeeName, Integer officeNumber) {
         for (Office office : offices) {
             if (officeNumber.equals(office.getOfficeNumber())) {
                 if (office.existEmployee(employeeName)) {
                     System.out.println(employeeName + " already exists in " + office.getOfficeName());
+                    return false;
                 } else {
                     office.addEmployee(employeeName);
                     System.out.println("Added " + employeeName + " to " + office.getOfficeName());
+                    return true;
                 }
-                return;
             }
         }
         System.out.println("Office number not found");
+        return false;
     }
 
+    public static boolean removeEmployee(String employeeName, Integer officeNumber) {
+        for (Office office : offices) {
+            if (officeNumber.equals(office.getOfficeNumber())) {
+                if (office.existEmployee(employeeName)) {
+                    office.removeEmployee(employeeName);
+                    System.out.println("Removed " + employeeName + " from " + office.getOfficeName());
+                    return true;
+                } else {
+                    System.out.println(employeeName + " not found in " + office.getOfficeName());
+                    return false;
+                }
+            }
+        }
+        System.out.println("Office number not found");
+        return false;
+    }
 
-    public static void transferEmployee(String employeeName, Integer oldOfficeNumber, Integer newOfficeNumber) {
+    public static boolean transferEmployee(String employeeName, Integer oldOfficeNumber, Integer newOfficeNumber) {
         boolean oldOffice = false;
         boolean newOffice = false;
 
@@ -47,18 +65,19 @@ public class Company {
                     oldOffice = true;
                 } else {
                     System.out.println(employeeName + " not found in " + office.getOfficeName());
-                    return;
+                    return false;
                 }
             }
 
             if (newOfficeNumber.equals(office.getOfficeNumber())) {
                 if (office.existEmployee(employeeName)) {
                     System.out.println(employeeName + " already exists " + office.getOfficeName());
-                    return;
+                    return false;
                 } else {
                     office.addEmployee(employeeName);
                     newOffice = true;
                     System.out.println("Moved " + employeeName + " to " + office.getOfficeName());
+                    return true;
                 }
             }
         }
@@ -70,6 +89,8 @@ public class Company {
         if (!newOffice) {
             System.out.println(newOfficeNumber + " not found.");
         }
+
+        return false;
     }
     public static List<String> getEmployees(Integer officeNumber) {
         for (Office office : offices) {
