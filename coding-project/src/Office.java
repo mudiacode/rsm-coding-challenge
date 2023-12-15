@@ -25,7 +25,12 @@ public class Office {
     }
 
     public void removeEmployee(String employeeName) {
-        employees.remove(employeeName);
+        if (existEmployee(employeeName)) {
+            employees.remove(employeeName);
+            System.out.println("Removed " + employeeName + " from " + officeName);
+        } else {
+            System.out.println(employeeName + " not found in " + officeName);
+        }
     }
 
     public boolean existEmployee(String employeeName) {
