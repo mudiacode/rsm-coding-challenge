@@ -14,4 +14,5 @@ The MSR Management System is a simple system containing essential features:
 * Display a list of employees within a specific office
 * Display a list of all available offices
 
+![model1](https://github.com/MudiaCode/rsm-coding-challenge/blob/main/Screenshot%202023-12-15%2013%2043%2018.png)
 
