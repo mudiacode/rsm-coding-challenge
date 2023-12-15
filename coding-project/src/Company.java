@@ -37,18 +37,29 @@ public class Company {
 
 
     public static void transferEmployee(String employeeName, Integer oldOfficeNumber, Integer newOfficeNumber) {
-        boolean oldOffice= false;
-        boolean newOffice= false;
+        boolean oldOffice = false;
+        boolean newOffice = false;
 
         for (Office office : offices) {
             if (oldOfficeNumber.equals(office.getOfficeNumber())) {
-                office.removeEmployee(employeeName);
-                oldOffice= true;
+                if (office.existEmployee(employeeName)) {
+                    office.removeEmployee(employeeName);
+                    oldOffice = true;
+                } else {
+                    System.out.println(employeeName + " not found in " + office.getOfficeName());
+                    return;
+                }
             }
+
             if (newOfficeNumber.equals(office.getOfficeNumber())) {
-                office.addEmployee(employeeName);
-                newOffice= true;
-                System.out.println("Moved " + employeeName + " to " + office.getOfficeName());
+                if (office.existEmployee(employeeName)) {
+                    System.out.println(employeeName + " already exists " + office.getOfficeName());
+                    return;
+                } else {
+                    office.addEmployee(employeeName);
+                    newOffice = true;
+                    System.out.println("Moved " + employeeName + " to " + office.getOfficeName());
+                }
             }
         }
 
