@@ -71,13 +71,13 @@ public class Company {
             System.out.println(newOfficeNumber + " not found.");
         }
     }
-    public static void getEmployees(Integer officeNumber) {
+    public static List<String> getEmployees(Integer officeNumber) {
         for (Office office : offices) {
             if (officeNumber.equals(office.getOfficeNumber())) {
-                office.getEmployees();
-                return;
+                return office.getEmployees();
             }
         }
         System.out.println("Office number not found");
+        return null;
     }
 }

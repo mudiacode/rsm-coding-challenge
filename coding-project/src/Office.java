@@ -37,7 +37,10 @@ public class Office {
         return employees.contains(employeeName);
     }
 
-    public void getEmployees() {
-        System.out.println("Employees in office " + officeName + ": " + employees);
+    public ArrayList<String> getEmployees() {
+        System.out.println("Employees in " + officeName + ": " + employees);
+            return new ArrayList<>(employees);
     }
+
+
 }
