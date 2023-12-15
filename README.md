@@ -17,6 +17,9 @@ The MSR Management System is a simple system containing essential features:
 ![model1](https://github.com/MudiaCode/rsm-coding-challenge/blob/main/Screenshot%202023-12-15%2013%2043%2018.png)
 
 ## How to run the program
+
+Linux/MacOS
+___
 1. Clone the repo
 ```
 git clone https://github.com/MudiaCode/rsm-coding-challenge.git
@@ -25,7 +28,9 @@ git clone https://github.com/MudiaCode/rsm-coding-challenge.git
 ```
 cd rsm-coding-challenge && nvim coding-project/src/App.java
 ```
-or use an IDE of choice
-
 3. Run App.Java
 
+Others
+__
+1. Clone repo
+2. Use IDE of choice
