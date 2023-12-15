@@ -21,9 +21,9 @@ The MSR Management System is a simple system containing essential features:
 ```
 git clone https://github.com/MudiaCode/rsm-coding-challenge.git
 ```
-2. Open App.Java file with any text editor of choice
+2. Enter directory and open App.Java file with any text editor of choice
 ```
-nvim coding-project/src/App.java
+cd rsm-coding-challenge && nvim coding-project/src/App.java
 ```
 or use an IDE of choice
 
