@@ -35,3 +35,7 @@ Others
 ___
 1. Clone repo
 2. Use IDE of choice
+
+
+### Note
+I'm still a student getting my head around coding in general. If there are any tips and advice you could give you are more than welcome! Thank You for reading!
