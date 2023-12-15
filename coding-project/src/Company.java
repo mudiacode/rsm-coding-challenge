@@ -23,8 +23,7 @@ public class Company {
     public static void addEmployee(String employeeName, Integer officeNumber){
         for (Office office: offices) {
             if (officeNumber.equals(office.getOfficeNumber())){
-                office.addEmployee(employeeName);
-                System.out.println("Added employee " + employeeName + " to office " + office.getOfficeName());
+                office.addEmployee(employeeName);System.out.println("Added employee " + employeeName + " to office " + office.getOfficeName());
                 return;
             }
         }
