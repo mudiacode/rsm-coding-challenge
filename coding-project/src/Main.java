@@ -17,6 +17,8 @@ public class Main {
 
         Company.getEmployees(948985);
 
+        Company.addEmployee("Mike", 948985);
+
 
     }
 }

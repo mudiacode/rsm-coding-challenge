@@ -20,15 +20,21 @@ public class Company {
         System.out.println("Office number not found");
     }
 
-    public static void addEmployee(String employeeName, Integer officeNumber){
-        for (Office office: offices) {
-            if (officeNumber.equals(office.getOfficeNumber())){
-                office.addEmployee(employeeName);System.out.println("Added employee " + employeeName + " to office " + office.getOfficeName());
+    public static void addEmployee(String employeeName, Integer officeNumber) {
+        for (Office office : offices) {
+            if (officeNumber.equals(office.getOfficeNumber())) {
+                if (office.existEmployee(employeeName)) {
+                    System.out.println(employeeName + " already exists in " + office.getOfficeName());
+                } else {
+                    office.addEmployee(employeeName);
+                    System.out.println("Added " + employeeName + " to " + office.getOfficeName());
+                }
                 return;
             }
         }
         System.out.println("Office number not found");
     }
+
 
     public static void transferEmployee(String employeeName, Integer oldOfficeNumber, Integer newOfficeNumber) {
         boolean oldOffice= false;

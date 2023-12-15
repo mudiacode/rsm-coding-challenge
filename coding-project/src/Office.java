@@ -28,6 +28,10 @@ public class Office {
         employees.remove(employeeName);
     }
 
+    public boolean existEmployee(String employeeName) {
+        return employees.contains(employeeName);
+    }
+
     public void getEmployees() {
         System.out.println("Employees in office " + officeName + ": " + employees);
     }
