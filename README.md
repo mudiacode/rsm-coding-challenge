@@ -31,6 +31,6 @@ cd rsm-coding-challenge && nvim coding-project/src/App.java
 3. Run App.Java
 
 Others
-__
+___
 1. Clone repo
 2. Use IDE of choice
