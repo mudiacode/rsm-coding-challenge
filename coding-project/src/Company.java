@@ -10,16 +10,6 @@ public class Company {
         System.out.println("Opened Office: " + newOffice.getOfficeName() + ", " + newOffice.getOfficeNumber());
     }
 
-    public static void getOffice(Integer officeNumber) {
-        for (Office office : offices) {
-            if (officeNumber.equals(office.getOfficeNumber())){
-                System.out.println("found: " + office.getOfficeName() + " (" + office.getOfficeNumber() + ")");
-                return;
-            }
-        }
-        System.out.println("Office number not found");
-    }
-
     public static boolean addEmployee(String employeeName, Integer officeNumber) {
         for (Office office : offices) {
             if (officeNumber.equals(office.getOfficeNumber())) {
@@ -56,7 +46,6 @@ public class Company {
 
     public static boolean transferEmployee(String employeeName, Integer oldOfficeNumber, Integer newOfficeNumber) {
         boolean oldOffice = false;
-        boolean newOffice = false;
 
         for (Office office : offices) {
             if (oldOfficeNumber.equals(office.getOfficeNumber())) {
@@ -75,7 +64,6 @@ public class Company {
                     return false;
                 } else {
                     office.addEmployee(employeeName);
-                    newOffice = true;
                     System.out.println("Moved " + employeeName + " to " + office.getOfficeName());
                     return true;
                 }
@@ -86,19 +74,17 @@ public class Company {
             System.out.println(oldOfficeNumber + " not found.");
         }
 
-        if (!newOffice) {
-            System.out.println(newOfficeNumber + " not found.");
-        }
+        System.out.println(newOfficeNumber + " not found.");
 
         return false;
     }
-    public static List<String> getEmployees(Integer officeNumber) {
+    public static void getEmployees(Integer officeNumber) {
         for (Office office : offices) {
             if (officeNumber.equals(office.getOfficeNumber())) {
-                return office.getEmployees();
+                office.getEmployees();
+                return;
             }
         }
         System.out.println("Office number not found");
-        return null;
     }
 }

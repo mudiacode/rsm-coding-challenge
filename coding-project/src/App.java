@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class App {
     static Scanner scanner = new Scanner(System.in);
-    static Company company = new Company();
 
     public static void main(String[] args) {
         boolean exit = false;
@@ -66,7 +65,7 @@ public class App {
         if (isOfficeNameTaken(officeName)) {
             System.out.println("'" + officeName + "' is already taken. Please choose another name.");
         } else {
-            company.openOffice(officeName);
+            Company.openOffice(officeName);
             System.out.println("'" + officeName + "' opened successfully.");
         }
     }
@@ -110,7 +109,7 @@ public class App {
         System.out.print("Enter office number: ");
         int officeNumber = scanner.nextInt();
 
-        boolean result = company.addEmployee(employeeName, officeNumber);
+        boolean result = Company.addEmployee(employeeName, officeNumber);
         if (result) {
             System.out.println("Employee added successfully.");
         } else {
@@ -133,7 +132,7 @@ public class App {
         String employeeName = scanner.next();
         System.out.print("Enter office number: ");
         int officeNumber = scanner.nextInt();
-        boolean result = company.removeEmployee(employeeName, officeNumber);
+        boolean result = Company.removeEmployee(employeeName, officeNumber);
         if (result) {
             System.out.println("Employee removed successfully.");
         } else {
@@ -148,7 +147,7 @@ public class App {
         int oldOfficeNumber = scanner.nextInt();
         System.out.print("Enter new office number: ");
         int newOfficeNumber = scanner.nextInt();
-        boolean result = company.transferEmployee(employeeName, oldOfficeNumber, newOfficeNumber);
+        boolean result = Company.transferEmployee(employeeName, oldOfficeNumber, newOfficeNumber);
         if (result) {
             System.out.println("Employee transferred successfully.");
         } else {
@@ -159,7 +158,7 @@ public class App {
     private static void getEmployees() {
         System.out.print("Enter the office number: ");
         int officeNumber = scanner.nextInt();
-        company.getEmployees(officeNumber);
+        Company.getEmployees(officeNumber);
     }
 
     private static void showAvailableOffices() {
