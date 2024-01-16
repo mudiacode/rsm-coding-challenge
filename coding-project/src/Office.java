@@ -1,19 +1,12 @@
-// java.util package for ArrayList and List
 import java.util.ArrayList;
 import java.util.List;
 
-// create Office class to store attributes and methods for offices created
 public class Office {
 
-    // attributes for offices
-    // private -> modifier that makes an attribute or method only be used within the class
-    // final -> modifier that makes variables unable to be changed
     private final Integer officeNumber;
     private final String officeName;
     private final List<String> employees;
 
-    // encapsulation
-    // this ->
     public Office(String officeName) {
         this.officeNumber = UniqueIdentifier.generateUniqueIdentifier();
         this.officeName = officeName;
