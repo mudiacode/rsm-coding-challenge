@@ -2,14 +2,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Company {
+//    list of offices
     static List<Office> offices = new ArrayList<>();
 
+//    Method creates and adds a new office to offices arr
     public static void openOffice(String officeName) {
         Office newOffice = new Office(officeName);
         offices.add(newOffice);
+//    Prints office name and office number when inputted by user
         System.out.println("Opened Office: " + newOffice.getOfficeName() + ", " + newOffice.getOfficeNumber());
     }
 
+//    loops through offices arr to check if office exists by user inputting officeNumber
     public static boolean addEmployee(String employeeName, Integer officeNumber) {
         for (Office office : offices) {
             if (officeNumber.equals(office.getOfficeNumber())) {

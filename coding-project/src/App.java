@@ -3,15 +3,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App {
+//    Create new scanner within App class for user input
     static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
+//        Initialises that exit = false as if exit = true then program will close (case 7)
         boolean exit = false;
 
+//        while exit is not false (true) display displayMenu() for user menu options
         while (!exit) {
             displayMenu();
+
+//            Integer variable passed as a switch parameter for scanner to input integers
+//            This allows the user to choose switch cases to execute a method
             int choice = getChoice();
 
+//            Switch statement used to execute office and company methods
             switch (choice) {
                 case 1:
                     openOffice();
@@ -35,6 +41,7 @@ public class App {
                     exit = true;
                     System.out.println("Closing Program...");
                     break;
+//                    If wrong input is given to any method the program with prompt the user to try again
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -53,26 +60,36 @@ public class App {
         System.out.print("Enter your choice: ");
     }
 
+//    Returns an integer to scanner parameter to select a case
     private static int getChoice() {
         return scanner.nextInt();
     }
 
+//    calls the openOffice function from the Company class
+//    prompts the user to enter office name
     private static void openOffice() {
         System.out.print("Enter office name: ");
         scanner.nextLine();
         String officeName = scanner.nextLine();
 
+//      passes officeName into parameter to check if already used
+//      officeName passed as parameter in isOfficeNameTaken to check if office name is taken
+//        if taken then user prompted to try another name that isn't taken
+
         if (isOfficeNameTaken(officeName)) {
             System.out.println("'" + officeName + "' is already taken. Please choose another name.");
         } else {
+//            if office name not taken then office is opened with the given office name
             Company.openOffice(officeName);
             System.out.println("'" + officeName + "' opened successfully.");
         }
     }
 
+//    checks office arr if office name is already used
     private static boolean isOfficeNameTaken(String officeName) {
         for (Office office : Company.offices) {
-            if (officeName.equalsIgnoreCase(office.getOfficeName())) {
+//            if office name is same as user input then it's taken
+            if (officeName.equals(office.getOfficeName())) {
                 return true;
             }
         }
@@ -168,3 +185,6 @@ public class App {
         }
     }
 }
+
+//TODO: Comment on code
+//TODO: Get rid of white spaces when user enters information
