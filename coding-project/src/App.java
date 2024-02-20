@@ -97,35 +97,44 @@ public class App {
         return false;
     }
 
+//    User enters employee name
     private static void addEmployee() {
         System.out.print("Enter employee name: ");
         String employeeName = scanner.next();
 
+//        variable to List available offices that has been opened by user
         List<Office> availableOffices = Company.offices;
 
+//        Prints all available offices if opened
         if (!availableOffices.isEmpty()) {
             System.out.println("Available Offices:");
             for (Office office : availableOffices) {
                 System.out.println("Office " + office.getOfficeNumber() + ": " + office.getOfficeName());
             }
+//        Informs user to open offices if none are opened
         } else {
             System.out.println("No offices available. Please open an office first.");
             return;
         }
 
+//        Variable to list all employees in an office
         List<Office> employeeOffices = getEmployeeOffices(employeeName);
 
+//        Prints existing employees if employee name matches an employee in an existing office
         if (!employeeOffices.isEmpty()) {
             System.out.println("Employee '" + employeeName + "' is already present in the following offices:");
             for (Office office : employeeOffices) {
                 System.out.println("Office " + office.getOfficeNumber() + ": " + office.getOfficeName());
             }
+//            Informs user that the employee name isn't present in any office
         } else {
             System.out.println("Employee '" + employeeName + "' is not present in any office.");
         }
 
+//        User enters office number
         System.out.print("Enter office number: ");
         int officeNumber = scanner.nextInt();
+
 
         boolean result = Company.addEmployee(employeeName, officeNumber);
         if (result) {
