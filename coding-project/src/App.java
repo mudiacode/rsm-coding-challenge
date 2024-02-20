@@ -96,36 +96,45 @@ public class App {
         return false;
     }
 
+//    User adds employee name
     private static void addEmployee() {
         System.out.print("Enter employee name: ");
         String employeeName = scanner.next();
 
+//      Lists available offices
         List<Office> availableOffices = Company.offices;
 
+//      If there are offices open then it will list available offices
         if (!availableOffices.isEmpty()) {
             System.out.println("Available Offices:");
             for (Office office : availableOffices) {
                 System.out.println("Office " + office.getOfficeNumber() + ": " + office.getOfficeName());
             }
+//      If offices aren't open then it will prompt the user to open an office first
         } else {
             System.out.println("No offices available. Please open an office first.");
             return;
         }
 
+//        lists all the employees within an office
         List<Office> employeeOffices = getEmployeeOffices(employeeName);
 
+//        If an employee name is present in any office then it will inform the user which office the name is present in
         if (!employeeOffices.isEmpty()) {
             System.out.println("Employee '" + employeeName + "' is already present in the following offices:");
             for (Office office : employeeOffices) {
                 System.out.println("Office " + office.getOfficeNumber() + ": " + office.getOfficeName());
             }
+//            If the employee name isn't present in any office then it will inform user
         } else {
             System.out.println("Employee '" + employeeName + "' is not present in any office.");
         }
 
+//        user assigns employee to office via entering office number
         System.out.print("Enter office number: ");
         int officeNumber = scanner.nextInt();
 
+//        success upon employee name matching existing office number without an existing employee name
         boolean result = Company.addEmployee(employeeName, officeNumber);
         if (result) {
             System.out.println("Employee added successfully.");
