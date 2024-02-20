@@ -135,7 +135,7 @@ public class App {
         System.out.print("Enter office number: ");
         int officeNumber = scanner.nextInt();
 
-
+//      Success upon employee name not matching an employee with the same name and office number
         boolean result = Company.addEmployee(employeeName, officeNumber);
         if (result) {
             System.out.println("Employee added successfully.");
