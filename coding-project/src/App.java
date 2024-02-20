@@ -100,6 +100,7 @@ public class App {
         System.out.print("Enter employee name: ");
         String employeeName = scanner.next();
 
+        // displays existing offices for user to refer to when adding an employee
         List<Office> availableOffices = Company.offices;
 
         if (!availableOffices.isEmpty()) {
