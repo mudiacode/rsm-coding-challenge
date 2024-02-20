@@ -147,6 +147,7 @@ public class App {
 
 //    Prints a list of Existing employees and their designated offices
     private static List<Office> getEmployeeOffices(String employeeName) {
+//        variable to list all employee offices
         List<Office> employeeOffices = new ArrayList<>();
         for (Office office : Company.offices) {
             if (office.existEmployee(employeeName)) {
@@ -156,6 +157,7 @@ public class App {
         return employeeOffices;
     }
 
+//    Removes employees when employee name matches office number
     private static void removeEmployee() {
         System.out.print("Enter employee name: ");
         String employeeName = scanner.next();
@@ -165,6 +167,7 @@ public class App {
         if (result) {
             System.out.println("Employee removed successfully.");
         } else {
+//            If they don't match: inform user to try again
             System.out.println("Failed to remove employee. Please try again...");
         }
     }
