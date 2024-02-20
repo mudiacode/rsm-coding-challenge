@@ -13,9 +13,10 @@ public class Company {
         System.out.println("Opened Office: " + newOffice.getOfficeName() + ", " + newOffice.getOfficeNumber());
     }
 
-//    loops through offices arr to check if office exists by user inputting officeNumber
+//    loops through offices arr to check if office matches officeNumber (inputted by user)
     public static boolean addEmployee(String employeeName, Integer officeNumber) {
         for (Office office : offices) {
+            // if office
             if (officeNumber.equals(office.getOfficeNumber())) {
                 if (office.existEmployee(employeeName)) {
                     System.out.println(employeeName + " already exists in " + office.getOfficeName());
