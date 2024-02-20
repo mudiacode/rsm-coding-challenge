@@ -201,6 +201,7 @@ public class App {
         Company.getEmployees(officeNumber);
     }
 
+//    Provides a list of Offices opened showing the office number and office name assigned to office
     private static void showAvailableOffices() {
         System.out.println("Available Offices:");
         for (Office office : Company.offices) {
