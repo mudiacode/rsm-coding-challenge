@@ -144,6 +144,8 @@ public class App {
         }
     }
 
+
+//    Prints a list of Existing employees and their designated offices
     private static List<Office> getEmployeeOffices(String employeeName) {
         List<Office> employeeOffices = new ArrayList<>();
         for (Office office : Company.offices) {
