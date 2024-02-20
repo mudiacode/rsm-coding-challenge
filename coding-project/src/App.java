@@ -48,6 +48,7 @@ public class App {
         }
     }
 
+//    displays input options for user
     private static void displayMenu() {
         System.out.println("-=-=-=-=-=- MSR MANAGEMENT SYSTEM -=-=-=-=-=-");
         System.out.println("1. Open Office");
