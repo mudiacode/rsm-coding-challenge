@@ -172,14 +172,21 @@ public class App {
         }
     }
 
+//    Transfers one employee to another office
     private static void transferEmployee() {
         System.out.print("Enter employee name: ");
         String employeeName = scanner.next();
+
+//        Office that employee is currently in
         System.out.print("Enter old office number: ");
         int oldOfficeNumber = scanner.nextInt();
+
+//        Office that user wants employee to go to
         System.out.print("Enter new office number: ");
         int newOfficeNumber = scanner.nextInt();
         boolean result = Company.transferEmployee(employeeName, oldOfficeNumber, newOfficeNumber);
+
+//        Success if employee name and old office number match, and If new officeNumber exists
         if (result) {
             System.out.println("Employee transferred successfully.");
         } else {
@@ -187,6 +194,7 @@ public class App {
         }
     }
 
+//    Gets list of employees in an office if office number matches
     private static void getEmployees() {
         System.out.print("Enter the office number: ");
         int officeNumber = scanner.nextInt();
