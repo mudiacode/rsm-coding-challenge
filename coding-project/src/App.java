@@ -48,6 +48,8 @@ public class App {
         }
     }
 
+
+
 //    displays input options for user
     private static void displayMenu() {
         System.out.println("-=-=-=-=-=- MSR MANAGEMENT SYSTEM -=-=-=-=-=-");
@@ -163,7 +165,8 @@ public class App {
         System.out.print("Enter employee name: ");
         String employeeName = scanner.next();
         System.out.print("Enter office number: ");
-        int officeNumber = scanner.nextInt();
+//        trim to get rid of whitespaces. Convert to integer for list reference
+        int officeNumber = Integer.parseInt(scanner.nextLine().trim());
         boolean result = Company.removeEmployee(employeeName, officeNumber);
         if (result) {
             System.out.println("Employee removed successfully.");
@@ -180,11 +183,11 @@ public class App {
 
 //        Office that employee is currently in
         System.out.print("Enter old office number: ");
-        int oldOfficeNumber = scanner.nextInt();
+        int oldOfficeNumber = Integer.parseInt(scanner.nextLine().trim());
 
 //        Office that user wants employee to go to
         System.out.print("Enter new office number: ");
-        int newOfficeNumber = scanner.nextInt();
+        int newOfficeNumber= Integer.parseInt(scanner.nextLine().trim());
         boolean result = Company.transferEmployee(employeeName, oldOfficeNumber, newOfficeNumber);
 
 //        Success if employee name and old office number match, and If new officeNumber exists
@@ -198,7 +201,7 @@ public class App {
 //    Gets list of employees in an office if office number matches
     private static void getEmployees() {
         System.out.print("Enter the office number: ");
-        int officeNumber = scanner.nextInt();
+        int officeNumber = Integer.parseInt(scanner.nextLine().trim());
         Company.getEmployees(officeNumber);
     }
 
