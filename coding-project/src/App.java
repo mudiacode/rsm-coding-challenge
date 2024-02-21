@@ -211,4 +211,4 @@ public class App {
 }
 
 //TODO: Comment on code
-//TODO: Get rid of white spaces when user enters information
+//TODO: Get rid of white spaces when user enters officeNumber (.trim())
