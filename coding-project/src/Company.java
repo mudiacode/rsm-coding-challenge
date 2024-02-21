@@ -28,10 +28,12 @@ public class Company {
                 }
             }
         }
+//        If not then prompt office is not found
         System.out.println("Office number not found");
         return false;
     }
 
+//    Removes employee from office if employee name matches office number
     public static boolean removeEmployee(String employeeName, Integer officeNumber) {
         for (Office office : offices) {
             if (officeNumber.equals(office.getOfficeNumber())) {
@@ -39,21 +41,26 @@ public class Company {
                     office.removeEmployee(employeeName);
                     System.out.println("Removed " + employeeName + " from " + office.getOfficeName());
                     return true;
+//              If employee name don't match office number
                 } else {
                     System.out.println(employeeName + " not found in " + office.getOfficeName());
                     return false;
                 }
             }
         }
+//        If not then prompt office number not found
         System.out.println("Office number not found");
         return false;
     }
 
+// Transfers employee from old office to new office
     public static boolean transferEmployee(String employeeName, Integer oldOfficeNumber, Integer newOfficeNumber) {
         boolean oldOffice = false;
 
+//        If user enters officeNumber that resembles the original office of Employee
         for (Office office : offices) {
             if (oldOfficeNumber.equals(office.getOfficeNumber())) {
+//                if it resembles existing old office then remove employee and add to new office using officeNumber
                 if (office.existEmployee(employeeName)) {
                     office.removeEmployee(employeeName);
                     oldOffice = true;
