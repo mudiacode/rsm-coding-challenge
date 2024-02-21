@@ -133,7 +133,8 @@ public class App {
 
 //        User enters office number
         System.out.print("Enter office number: ");
-        int officeNumber = scanner.nextInt();
+        int officeNumber = Integer.parseInt(scanner.nextLine().trim());
+
 
 //      Success upon employee name not matching an employee with the same name and office number
         boolean result = Company.addEmployee(employeeName, officeNumber);
